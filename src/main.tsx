@@ -19,7 +19,9 @@ import keycloak from './keycloak';
 // });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-        <ReactKeycloakProvider authClient={keycloak}>
-            <App/>
-        </ReactKeycloakProvider>
+    <ReactKeycloakProvider authClient={keycloak} initOptions={{
+        flow: 'implicit'
+    }}>
+        <App/>
+    </ReactKeycloakProvider>
 )
